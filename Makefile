@@ -24,19 +24,19 @@ segment: clean libcppjieba_src priv/mp_segment.so priv/hmm_segment.so priv/mix_s
 
 priv/mp_segment.so:
 	mkdir -p priv && \
-	$(CC) $(CFLAGS) $(ERLANG_FLAGS) $(CPPJIEBA_FLAGS) -shared $(OPTIONS) -DLOGGER_LEVEL=LL_ERROR src/mp_segment.cpp -o $@ 2>&1 >/dev/null
+	$(CC) $(CFLAGS) $(ERLANG_FLAGS) $(CPPJIEBA_FLAGS) -shared -DLOGGER_LEVEL=LL_ERROR src/mp_segment.cpp -o $@ $(OPTIONS) 2>&1 >/dev/null
 
 priv/mix_segment.so:
 	mkdir -p priv && \
-	$(CC) $(CFLAGS) $(ERLANG_FLAGS) $(CPPJIEBA_FLAGS) -shared $(OPTIONS) -DLOGGER_LEVEL=LL_ERROR src/mix_segment.cpp -o $@ 2>&1 >/dev/null
+	$(CC) $(CFLAGS) $(ERLANG_FLAGS) $(CPPJIEBA_FLAGS) -shared -DLOGGER_LEVEL=LL_ERROR src/mix_segment.cpp -o $@ $(OPTIONS) 2>&1 >/dev/null
 
 priv/hmm_segment.so:
 	mkdir -p priv && \
-	$(CC) $(CFLAGS) $(ERLANG_FLAGS) $(CPPJIEBA_FLAGS) -shared $(OPTIONS) -DLOGGER_LEVEL=LL_ERROR src/hmm_segment.cpp -o $@ 2>&1 >/dev/null
+	$(CC) $(CFLAGS) $(ERLANG_FLAGS) $(CPPJIEBA_FLAGS) -shared -DLOGGER_LEVEL=LL_ERROR src/hmm_segment.cpp -o $@ $(OPTIONS) 2>&1 >/dev/null
 
 priv/query_segment.so:
 	mkdir -p priv && \
-	$(CC) $(CFLAGS) $(ERLANG_FLAGS) $(CPPJIEBA_FLAGS) -shared $(OPTIONS) -DLOGGER_LEVEL=LL_ERROR src/query_segment.cpp -o $@ 2>&1 >/dev/null
+	$(CC) $(CFLAGS) $(ERLANG_FLAGS) $(CPPJIEBA_FLAGS) -shared -DLOGGER_LEVEL=LL_ERROR src/query_segment.cpp -o $@ $(OPTIONS) 2>&1 >/dev/null
 
 
 clean:
