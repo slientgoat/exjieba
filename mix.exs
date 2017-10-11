@@ -17,7 +17,7 @@ defmodule Exjieba.Mixfile do
   end
 
   def application do
-    [mod: { ExJieba, [] }]
+    []
   end
 
   defp deps do
