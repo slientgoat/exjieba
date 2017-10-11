@@ -12,12 +12,12 @@ defmodule Exjieba.Mixfile do
       version: "0.0.2",
       elixir: ">= 1.0.0",
       compilers: [ :segment, :elixir, :app ],
-      deps: deps
+      deps: deps()
     ]
   end
 
   def application do
-    [mod: { ExJieba, [] }]
+    []
   end
 
   defp deps do
